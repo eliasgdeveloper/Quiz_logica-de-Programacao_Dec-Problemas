@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Se você tiver um arquivo CSS para estilização -->
+</head>
+
+<body>
+    <div id="feedback-container">
+        <h1>Feedback</h1>
+        <p>O seu feedback:</p>
+        <p>Nome: <span id="nome"></span></p>
+        <p>Curso: <span id="curso"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <p>Pontuação: <span id="pontuacao"></span></p>
+        <p>Mensagem: <span id="mensagem"></span></p>
+        <button id="btnVoltar">Voltar para o Quiz</button>
+    </div>
+
+    <script>
+        // Recuperar informações do aluno da memória local
+        document.getElementById('nome').textContent = localStorage.getItem('nome');
+        document.getElementById('curso').textContent = localStorage.getItem('curso');
+        document.getElementById('email').textContent = localStorage.getItem('email');
+        document.getElementById('pontuacao').textContent = localStorage.getItem('pontuacao');
+        document.getElementById('mensagem').textContent = localStorage.getItem('mensagem');
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btnVoltar = document.getElementById('btnVoltar');
+
+            btnVoltar.addEventListener('click', function () {
+                // Limpar os campos de entrada da div start-container
+                var inputs = document.querySelectorAll('#start-container input');
+                inputs.forEach(function (input) {
+                    input.value = "";
+                });
+
+                // Redirecionar para a página Decomposicao_Quiz.html
+                window.location.href = "Decomposicao_Quiz.html";
+            });
+        });
+
+
+    </script>
+
+
+
+
+
+
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btnVoltar = document.getElementById('btnVoltar');
+
+            btnVoltar.addEventListener('click', function () {
+                window.location.href = "Decomposicao_Quiz.html";
+            });
+        });
+    </script> -->
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+        // Função para jogar confete
+        function playConfetti() {
+            let params = {
+                particleCount: 500, // Quantidade de confetes
+                spread: 90, // O quanto eles se espalham
+                startVelocity: 70, // Velocidade inicial
+                origin: { x: 0, y: 0.5 }, // Posição inicial na tela
+                angle: 45 // Ângulo em que os confetes serão lançados
+            };
+
+            // Joga confetes da esquerda pra direita
+            confetti(params);
+
+            // Joga confetes da direita para a esquerda
+            params.origin.x = 1;
+            params.angle = 135;
+            confetti(params);
+        }
+
+        // Adiciona o evento de jogar confete ao carregar a página de feedback, se necessário
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const confettiEnabled = urlParams.get('confetti');
+            if (confettiEnabled === "true") {
+                playConfetti();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

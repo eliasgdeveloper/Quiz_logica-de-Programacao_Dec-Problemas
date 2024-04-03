@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Decomposição de Problemas na Programação</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+
+
+        <div id="start-container">
+            <h1>Bem-vindo ao Quiz de Lógica de Programação</h1>
+            <h2>"Decomposição de Problemas"</h2>
+            <h3>Professor: Elias Gomes</h3>
+            <p>Este quiz contém 10 perguntas de múltipla escolha. Cada questão vale 1 ponto. Para ser aprovado, você
+                precisa acertar pelo menos 6 questões.</p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" class="form-control" pattern="[A-Za-z\s]+" placeholder="Digite seu nome"
+                required>
+
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" class="form-control" pattern="[A-Za-z\s]+" placeholder="Digite seu curso"
+                required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" placeholder="Digite seu email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+            <h3> </h3>
+            <h3> </h3>
+            <h3> </h3>
+            <!-- <button id="start-quiz-btn" class="btn btn-primary">Iniciar Quiz2</button>-->
+            <button id="start-btn" class="btn btn-primary" onclick="startQuiz()">Iniciar Quiz</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- este abaixo já estava comentado antes<div id="start-container">
+            <h1>Bem-vindo ao Quiz de Lógica de Programação</h1>
+            <h2>"Decomposição de Problemas"</h2>
+            <h3>Professor: Elias Gomes</h3>
+            <p>Este quiz contém 10 perguntas de múltipla escolha. Cada questão vale 1 ponto. Para ser aprovado, você
+                precisa acertar pelo menos 6 questões.</p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" class="form-control" pattern="[A-Za-z\s]+" placeholder="Digite seu nome"
+                required>
+
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" class="form-control" pattern="[A-Za-z\s]+" placeholder="Digite seu curso"
+                required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" placeholder="Digite seu email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+            <h3> </h3>
+            <h3> </h3>
+            <button id="start-btn" class="btn btn-primary">Iniciar Quiz</button>
+        </div> este acima já estava comentado antes;-->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="quiz-container" style="display: none;">
+            <div class="countdown" id="countdown">10:00</div>
+            <div id="question-container">
+                <p id="question"></p>
+                <div id="choices"></div> <!-- Alteração: troquei a ul por div -->
+            </div>
+            <button id="next-btn" class="btn btn-primary">Próxima Questão</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+    <div id="feedback-container" class="feedback" style="display: none;">
+        <h1>Feedback Final</h1>
+        <p id="feedback-score"></p>
+        <p id="feedback-message"></p>
+        <button id="feedback-btn" class="btn btn-primary">Ver Feedback</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
